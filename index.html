@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An interactive beginner-friendly guide to first-order differential equations.">
+  <title>Differential Equations Learning Lab</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Learning Lab home"><span class="brand-mark">∫</span> DE Learning Lab</a>
+    <nav><a href="#lessons">Lessons</a><a href="#practice">Practice</a><a href="#formulas">Formula sheet</a></nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">MATHEMATICS • LEARN BY DOING</p>
+        <h1>Differential equations,<br><span>from the very beginning.</span></h1>
+        <p class="hero-text">Understand the ideas, follow worked solutions one step at a time, and check what you've learned with interactive practice.</p>
+        <a class="primary-button" href="#lessons">Start learning <span>→</span></a>
+      </div>
+      <div class="hero-equation" aria-label="dy by dx plus P of x times y equals Q of x">
+        <div class="equation-label">FIRST-ORDER LINEAR FORM</div>
+        <div class="equation">dy/dx + P(x)y = Q(x)</div>
+        <div class="equation-note">One concept at a time. No prior DE knowledge needed.</div>
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Learning progress">
+      <div><strong id="completed-count">0</strong><span>Lessons completed</span></div>
+      <div><strong>4</strong><span>Core learning modules</span></div>
+      <div><strong id="quiz-score">—</strong><span>Latest quiz score</span></div>
+    </section>
+
+    <section id="lessons" class="section">
+      <div class="section-heading">
+        <div><p class="eyebrow">YOUR LEARNING PATH</p><h2>Explore the lessons</h2></div>
+        <p>Start with the foundations, then move on to solving techniques.</p>
+      </div>
+      <div class="lesson-grid">
+        <button class="lesson-card active" data-lesson="intro">
+          <span class="lesson-number">01</span><span class="lesson-icon">∂</span>
+          <h3>Introduction</h3><p>Understand derivatives, equations, order and degree.</p><span class="card-link">Open lesson →</span>
+        </button>
+        <button class="lesson-card" data-lesson="separable">
+          <span class="lesson-number">02</span><span class="lesson-icon">⇄</span>
+          <h3>Variable separable</h3><p>Separate variables and integrate each side.</p><span class="card-link">Open lesson →</span>
+        </button>
+        <button class="lesson-card" data-lesson="linear">
+          <span class="lesson-number">03</span><span class="lesson-icon">＝</span>
+          <h3>Linear equations</h3><p>Recognise the standard first-order linear form.</p><span class="card-link">Open lesson →</span>
+        </button>
+        <button class="lesson-card" data-lesson="factor">
+          <span class="lesson-number">04</span><span class="lesson-icon">∫</span>
+          <h3>Integrating factor</h3><p>Use the integrating factor to solve linear equations.</p><span class="card-link">Open lesson →</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="lesson-workspace" aria-live="polite">
+      <div class="workspace-heading">
+        <div><p class="eyebrow" id="lesson-kicker">MODULE 01</p><h2 id="lesson-title">What is a differential equation?</h2></div>
+        <button id="complete-lesson" class="outline-button">Mark lesson complete ✓</button>
+      </div>
+      <div class="workspace-grid">
+        <article class="lesson-content">
+          <div id="lesson-body"></div>
+          <div class="lesson-navigation"><button id="previous-step" class="outline-button" disabled>← Previous</button><span id="step-indicator">Step 1 of 3</span><button id="next-step" class="primary-button">Next step →</button></div>
+        </article>
+        <aside class="side-note">
+          <p class="eyebrow">REMEMBER</p>
+          <h3 id="remember-title">The big idea</h3>
+          <p id="remember-text">A differential equation connects an unknown function with one or more of its derivatives.</p>
+          <div class="tip-box"><strong>Learning tip</strong><p>Read the explanation, write the steps yourself, and only then reveal the next step.</p></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="practice" class="section practice-section">
+      <div class="section-heading"><div><p class="eyebrow">CHECK YOUR UNDERSTANDING</p><h2>Quick practice</h2></div><p>Choose an answer and get immediate feedback.</p></div>
+      <div class="quiz-card">
+        <div class="quiz-top"><span class="quiz-tag">QUESTION <span id="question-number">1</span> / 4</span><span id="quiz-progress">● ○ ○ ○</span></div>
+        <h3 id="question-text">Which expression is a first-order differential equation?</h3>
+        <div id="answer-options" class="answer-options"></div>
+        <p id="answer-feedback" class="feedback" aria-live="polite"></p>
+        <div class="quiz-actions"><button id="next-question" class="primary-button" disabled>Next question →</button><button id="restart-quiz" class="text-button">Restart quiz</button></div>
+      </div>
+    </section>
+
+    <section id="formulas" class="section formula-section">
+      <div class="section-heading"><div><p class="eyebrow">KEEP THIS CLOSE</p><h2>Formula sheet</h2></div><p>The key forms and methods covered in this learning lab.</p></div>
+      <div class="formula-grid">
+        <div class="formula-card"><span>VARIABLE SEPARABLE</span><div class="formula">dy/g(y) = f(x) dx</div><p>Separate the variables, then integrate both sides.</p></div>
+        <div class="formula-card"><span>LINEAR STANDARD FORM</span><div class="formula">dy/dx + P(x)y = Q(x)</div><p>Identify P(x) and Q(x) before solving.</p></div>
+        <div class="formula-card"><span>INTEGRATING FACTOR</span><div class="formula">IF = e<sup>∫P(x) dx</sup></div><p>Multiply every term by the integrating factor.</p></div>
+        <div class="formula-card"><span>GENERAL SOLUTION</span><div class="formula">y · IF = ∫Q · IF dx + C</div><p>C is the constant of integration.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>DE Learning Lab</span><span>Built for curious learners. Keep practising.</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
